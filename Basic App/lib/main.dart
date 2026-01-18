@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/home/HomeScreen.dart';
+import 'package:flutter_application_1/List/ListScreen.dart';
 import 'package:flutter_application_1/statelearning.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Navigation Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blue)),
-      home: const Homescreen(),
+      home:  Listscreen(),
     );
   }
 }
