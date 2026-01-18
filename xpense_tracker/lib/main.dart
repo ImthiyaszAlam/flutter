@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:xpense_tracker/presentation/screens/home_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ExpenseApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class ExpenseApp extends StatelessWidget {
+  const ExpenseApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'Offline Expense Tracker',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.green),
+      home: HomeScreen()
     );
   }
 }
