@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screen1.dart';
+import 'package:flutter_application_1/home/HomeScreen.dart';
 import 'package:flutter_application_1/statelearning.dart';
 
 void main() {
@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Navigation Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.blue)),
-      home: const HomeScreen(),
+      home: const Homescreen(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
