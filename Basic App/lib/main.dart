@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen1.dart';
+import 'package:flutter_application_1/statelearning.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,10 +28,18 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: const Text("Demo")),
       body: Center(
         child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => const Screen1()),
+              MaterialPageRoute(builder: (_) => const StateLearning()),
             );
           },
           child: const Text("Screen1 "),
