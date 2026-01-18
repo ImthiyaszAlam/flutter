@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screen3.dart';
 
 class Screen2 extends StatelessWidget {
   const Screen2({super.key});
@@ -8,7 +9,15 @@ class Screen2 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Screen 2")),
       body: Center(
-        child: const Text("This is Screen 2"),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const Screen3()),
+            );
+          },
+          child: const Text("Go to screen 3"),
+        ),
       ),
     );
   }
