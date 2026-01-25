@@ -12,10 +12,7 @@ class Listscreen extends StatelessWidget {
     User(name: "Priya", age: 24),
     User(name: "Karthik", age: 26),
     User(name: "Neha", age: 21),
-    User(name: "Vikram", age: 31),
-    User(name: "Ananya", age: 25),
-    User(name: "Rohit", age: 28),
-    User(name: "Pooja", age: 23),
+    User(name: "Vikram", age: 31)
   ];
 
   @override
