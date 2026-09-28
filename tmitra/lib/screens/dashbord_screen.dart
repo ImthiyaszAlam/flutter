@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class DashbordScreen extends StatelessWidget {
   const DashbordScreen({super.key});
 
+  final users =const ['Imthiyas', 'Alam', 'Rahul', 'Amit'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,40 +57,18 @@ class DashbordScreen extends StatelessWidget {
             ),
 
             Expanded(
-              child: ListView(
-                children: [
-                  Card(
+              child: ListView.builder(
+                itemCount: users.length,
+                itemBuilder: (context, index) {
+                  return Card(
                     child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('LV1'),
+                      padding: const EdgeInsets.all(16),
+                      child: Text(users[index]),
                     ),
-                  ),
-
-                  Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('LV1'),
-                    ),
-                  ),
-
-                  Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('LV1'),
-                    ),
-                  ),
-
-                  Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('LV1'),
-                    ),
-                  ),
-                ],
+                  );
+                },
               ),
             ),
-
-            Row(children: [const Text("ROW 1")]),
           ],
         ),
       ),
