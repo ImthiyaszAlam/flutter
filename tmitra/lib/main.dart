@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tmitra/screens/LoginScreen.dart';
 import 'package:tmitra/screens/dashbord_screen.dart';
+import 'package:tmitra/screens/form_screen.dart';
 import 'package:tmitra/screens/home_screen.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Basics",
-      home: const DashbordScreen(),
+      home: const FormScreen(),
     );
   }
 }
