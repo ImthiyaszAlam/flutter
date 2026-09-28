@@ -25,7 +25,7 @@ class FormScreen extends StatelessWidget {
               SizedBox(height: 16),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: 'Mobile',
+                  hintText: 'Mobile',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
@@ -34,7 +34,7 @@ class FormScreen extends StatelessWidget {
 
 
               SizedBox(height: 16),
-              
+
               ElevatedButton(
                 onPressed: () {},
                 child: const Text('Submit Form'),

@@ -3,6 +3,7 @@ import 'package:tmitra/screens/LoginScreen.dart';
 import 'package:tmitra/screens/dashbord_screen.dart';
 import 'package:tmitra/screens/form_screen.dart';
 import 'package:tmitra/screens/home_screen.dart';
+import 'package:tmitra/screens/tab_screen.dart';
 
 void main() {
   runApp(
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Basics",
-      home: const FormScreen(),
+      home: const TabScreen(),
     );
   }
 }
