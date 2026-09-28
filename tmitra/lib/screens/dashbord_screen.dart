@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DashbordScreen extends StatelessWidget {
   const DashbordScreen({super.key});
 
-  final users =const ['Imthiyas', 'Alam', 'Rahul', 'Amit'];
+  final users = const ['Imthiyas', 'Alam', 'Rahul', 'Amit'];
 
   @override
   Widget build(BuildContext context) {
@@ -13,46 +13,16 @@ class DashbordScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('Card 11'),
-                    ),
-                  ),
-
-                  const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('Card 11'),
-                    ),
-                  ),
-
-                  const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('Card 11'),
-                    ),
-                  ),
-
-                  const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('Card 11'),
-                    ),
-                  ),
-
-                  const Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16),
-                      child: const Text('Card 11'),
-                    ),
-                  ),
-                ],
+            Expanded(
+              child: GridView.builder(
+                itemCount: users.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 3,
+                ),
+                itemBuilder: (context, index) {
+                  return Card(child: Center(child: Text(users[index])));
+                },
               ),
             ),
 
@@ -63,10 +33,23 @@ class DashbordScreen extends StatelessWidget {
                   return Card(
                     child: Padding(
                       padding: const EdgeInsets.all(16),
-                      child: Text(users[index]),
+                      child: Center(child: Text(users[index])),
                     ),
                   );
                 },
+              ),
+            ),
+
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                childAspectRatio: 3,
+                children: [
+                  Card(child: Center(child: const Text('Card 1'))),
+                  Card(child: Center(child: const Text('Card 1'))),
+                  Card(child: Center(child: const Text('Card 1'))),
+                  Card(child: Center(child: const Text('Card 1'))),
+                ],
               ),
             ),
           ],
