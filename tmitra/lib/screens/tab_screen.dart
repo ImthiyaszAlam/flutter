@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tmitra/screens/course_map_screen.dart';
 import 'package:tmitra/screens/LoginScreen.dart';
 import 'package:tmitra/screens/alert_screen.dart';
 import 'package:tmitra/screens/form_screen.dart';
@@ -15,7 +16,7 @@ class _TabScreenState extends State<TabScreen> {
   int selectedIndex = 0;
 
   final screens = [
-    const HomeScreen(),
+    HomeScreen(courseMapBuilder: (_) => const CourseMapScreen()),
     const Loginscreen(),
     const FormScreen(),
     const AlertScreen(),

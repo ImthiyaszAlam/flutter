@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tmitra/screens/LoginScreen.dart';
-import 'package:tmitra/screens/dashbord_screen.dart';
-import 'package:tmitra/screens/form_screen.dart';
+import 'package:tmitra/screens/course_map_screen.dart';
 import 'package:tmitra/screens/home_screen.dart';
-import 'package:tmitra/screens/tab_screen.dart';
 
 void main() {
   runApp(
@@ -18,8 +15,10 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Basics",
-      home: const TabScreen(),
+      title: 'Flutter Quest',
+      home: HomeScreen(
+        courseMapBuilder: (_) => const CourseMapScreen(),
+      ),
     );
   }
 }
