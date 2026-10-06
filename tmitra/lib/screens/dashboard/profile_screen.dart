@@ -12,26 +12,28 @@ class ProfileScreen extends StatelessWidget {
           padding: const EdgeInsets.all(32),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+
             children: [
+
+              Text(
+                'Profile Screen',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+
               const CircleAvatar(
-                radius: 32,
-                child: Icon(Icons.person_outline, size: 36),
+                radius: 50,
+                child: Icon(Icons.person_2_outlined),
               ),
-              const SizedBox(height: 16),
-              Text(
-                'Your profile',
-                style: Theme.of(context).textTheme.headlineSmall
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Your account details and learning preferences will appear here.',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge
-                    ?.copyWith(color: Colors.black54),
-              ),
+
               const SizedBox(height: 12),
-              const Chip(label: Text('Coming soon')),
+              Text(
+                'My Name',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge
+                    ?.copyWith(color: Colors.black),
+              ),
+
+
             ],
           ),
         ),
