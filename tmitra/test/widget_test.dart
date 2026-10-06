@@ -3,6 +3,32 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:tmitra/main.dart';
 
 void main() {
+  testWidgets('bottom navigation opens learning, progress, and profile', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const MyApp());
+
+    expect(find.text('Ready to build?'), findsOneWidget);
+
+    await tester.tap(find.text('Learn'));
+    await tester.pumpAndSettle();
+    expect(find.text('Course map'), findsOneWidget);
+
+    await tester.tap(find.text('Progress'));
+    await tester.pumpAndSettle();
+    expect(find.text('Your progress'), findsOneWidget);
+    expect(
+      find.text(
+        'Your completed lessons and learning milestones will appear here.',
+      ),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.text('Profile'));
+    await tester.pumpAndSettle();
+    expect(find.text('Your profile'), findsOneWidget);
+  });
+
   testWidgets('home dashboard opens the course map and first lesson', (
     WidgetTester tester,
   ) async {

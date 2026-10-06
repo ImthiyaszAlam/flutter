@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tmitra/screens/course_map_screen.dart';
-import 'package:tmitra/screens/home_screen.dart';
+import 'package:tmitra/screens/tab_screen.dart';
 
 void main() {
-  runApp(
-    const MyApp()
- );
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
@@ -16,9 +13,7 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Quest',
-      home: HomeScreen(
-        courseMapBuilder: (_) => const CourseMapScreen(),
-      ),
+      home: const TabScreen(),
     );
   }
 }

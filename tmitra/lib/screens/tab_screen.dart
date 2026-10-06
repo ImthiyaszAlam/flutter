@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tmitra/screens/course_map_screen.dart';
-import 'package:tmitra/screens/LoginScreen.dart';
-import 'package:tmitra/screens/alert_screen.dart';
-import 'package:tmitra/screens/form_screen.dart';
-import 'package:tmitra/screens/home_screen.dart';
+import 'package:tmitra/screens/dashboard/course_map_screen.dart';
+import 'package:tmitra/screens/dashboard/home_screen.dart';
+import 'package:tmitra/screens/dashboard/profile_screen.dart';
+import 'package:tmitra/screens/dashboard/progress_screen.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
@@ -13,34 +12,45 @@ class TabScreen extends StatefulWidget {
 }
 
 class _TabScreenState extends State<TabScreen> {
-  int selectedIndex = 0;
+  int _selectedIndex = 0;
 
-  final screens = [
+  late final List<Widget> _screens = [
     HomeScreen(courseMapBuilder: (_) => const CourseMapScreen()),
-    const Loginscreen(),
-    const FormScreen(),
-    const AlertScreen(),
+    const CourseMapScreen(),
+    const ProgressScreen(),
+    const ProfileScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[selectedIndex],
-
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: selectedIndex,
-        onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+      body: IndexedStack(index: _selectedIndex, children: _screens),
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: _selectedIndex,
+        onDestinationSelected: (index) {
+          setState(() => _selectedIndex = index);
         },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-
-          BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Login'),
-          BottomNavigationBarItem(icon: Icon(Icons.warning), label: 'Alert'),
+        destinations: const [
+          NavigationDestination(
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.menu_book_outlined),
+            selectedIcon: Icon(Icons.menu_book),
+            label: 'Learn',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.insights_outlined),
+            selectedIcon: Icon(Icons.insights),
+            label: 'Progress',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person_outline),
+            selectedIcon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
       ),
     );
