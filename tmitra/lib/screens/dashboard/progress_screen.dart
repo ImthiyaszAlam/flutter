@@ -6,6 +6,11 @@ class ProgressScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const purple = Color(0xFF6558D3);
+    const completedLessons = 3;
+    const totalLessons = 10;
+
+    final progress = totalLessons == 0 ? 0.0 : completedLessons / totalLessons;
+    final percentage = (progress * 100).round();
 
     return Scaffold(
       appBar: AppBar(title: const Text('Progress')),
@@ -15,19 +20,18 @@ class ProgressScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.insights_outlined, size: 56, color: purple),
-              const SizedBox(height: 16),
               Text(
-                'Your progress',
-                style: Theme.of(context).textTheme.headlineSmall
+                '$completedLessons of $totalLessons lessons completed',
+                style: Theme.of(context).textTheme.titleLarge
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 8),
-              Text(
-                'Your completed lessons and learning milestones will appear here.',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyLarge
-                    ?.copyWith(color: Colors.black54),
+              const SizedBox(height: 20),
+              LinearProgressIndicator(
+                value: progress,
+                minHeight: 50,
+                borderRadius: BorderRadius.circular(100),
+                color: purple,
+                backgroundColor: const Color(0xFFEDEAFF),
               ),
             ],
           ),
