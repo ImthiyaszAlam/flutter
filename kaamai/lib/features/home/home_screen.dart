@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.onThemeToggle});
+
+  final ValueChanged<Brightness> onThemeToggle;
 
   @override
   Widget build(BuildContext context) {
+    final brightness = Theme.of(context).brightness;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -15,6 +19,17 @@ class HomeScreen extends StatelessWidget {
           },
         ),
         actions: [
+          IconButton(
+            tooltip: brightness == Brightness.dark
+                ? 'Switch to light theme'
+                : 'Switch to dark theme',
+            icon: Icon(
+              brightness == Brightness.dark
+                  ? Icons.light_mode_outlined
+                  : Icons.dark_mode_outlined,
+            ),
+            onPressed: () => onThemeToggle(brightness),
+          ),
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
