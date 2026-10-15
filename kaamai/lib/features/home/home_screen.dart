@@ -10,21 +10,25 @@ class HomeScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Menu clicked'),
-              ),
-            );
+            ScaffoldMessenger.of(context)
+                .showSnackBar(const SnackBar(content: Text('Menu clicked')));
           },
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Notifications clicked')),
+              );
+            },
+          ),
+        ],
         title: const Text('KaamAI'),
       ),
 
       body: const Center(
-        child: Text(
-          'Home Screen',
-          style: TextStyle(fontSize: 24),
-        ),
+        child: Text('Home Screen', style: TextStyle(fontSize: 24)),
       ),
 
       bottomNavigationBar: NavigationBar(
