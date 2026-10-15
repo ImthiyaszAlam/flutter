@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kaamai/features/home/home_screen.dart';
+import 'package:kaamai/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       theme: _buildTheme(Brightness.light),
       darkTheme: _buildTheme(Brightness.dark),
       themeMode: _themeMode,
-      home: HomeScreen(onThemeToggle: _toggleTheme),
+      home: MainScreen(onThemeToggle: _toggleTheme),
     );
   }
 }
@@ -54,4 +54,5 @@ ThemeData _buildTheme(Brightness brightness) {
       indicatorColor: colorScheme.secondaryContainer,
     ),
   );
+  
 }
